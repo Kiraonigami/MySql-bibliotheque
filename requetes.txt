@@ -1,0 +1,17 @@
+SELECT L.Titre, L.Auteur, C.Nom AS Categorie
+FROM Livre L
+JOIN Livre_Categorie LC ON L.ID_Livre = LC.ID_Livre
+JOIN Categorie C ON LC.ID_Categorie = C.ID_Categorie;
+
+
+SELECT C.Nom AS Categorie, COUNT(LC.ID_Livre) AS Nombre_Livres
+FROM Livre_Categorie LC
+JOIN Categorie C ON LC.ID_Categorie = C.ID_Categorie
+GROUP BY C.Nom;
+
+
+SELECT L.Titre AS Livre, L.Auteur, C.Nom AS Categorie, C.Description
+FROM Livre L
+JOIN Livre_Categorie LC ON L.ID_Livre = LC.ID_Livre
+JOIN Categorie C ON LC.ID_Categorie = C.ID_Categorie;
+
